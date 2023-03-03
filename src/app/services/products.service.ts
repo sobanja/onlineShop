@@ -1,6 +1,6 @@
-import { IProducts } from '../models/products';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IProducts } from '../models/products';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
 
   url = 'http://localhost:3000/products';
+
   constructor(private http: HttpClient) { }
 
   getProducts() {

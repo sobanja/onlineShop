@@ -9,6 +9,7 @@
 mat-card {
   background-color: rgb(210, 205, 210);
   color: black;
+  margin-right: 10px;
 }
 
 .button {
@@ -16,4 +17,8 @@ mat-card {
 }
 .image {
   max-width: 300px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }
