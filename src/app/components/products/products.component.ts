@@ -35,26 +35,44 @@ export class ProductsComponent implements OnInit {
     this.ProductsService.deleteProduct(id).subscribe(() =>
       this.products.find((item) => {
         if (id === item.id) {
-          this.products.splice(0, 1);
+          let idx = this.products.findIndex((data) => data.id === id)
+          this.products.splice(idx, 1);
         }
       })
     );
   }
 
-  openDialog(): void {
+  openDialog(product?: IProducts): void {
     let dialogConfig = new MatDialogConfig();
     dialogConfig.width = '500px';
     dialogConfig.disableClose = true;
+    dialogConfig.data = product;
 
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
     //перед закрытием данные перехватятся (подписка на обновление) и передадутся в функцию
-    dialogRef.afterClosed().subscribe((data) => this.postData(data));
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data) {
+        if (data && data.id)
+      this.updateData(data);
+      else
+      this.postData(data);
+      }
+    });
   }
   // функция обратится к сервису, передаст данные на сервер и добавит в локал массив для отображ.
   postData(data: IProducts) {
     this.ProductsService.postProduct(data).subscribe((data) =>
       this.products.push(data)
     );
+  }
+
+  updateData(product: IProducts) { 
+    this.ProductsService.updateProduct(product).subscribe((data) => {
+      this.products = this.products.map((product) => {
+        if (product.id === data.id) return data
+        else return product
+      })
+    });
   }
 
   ngOnDestroy() {

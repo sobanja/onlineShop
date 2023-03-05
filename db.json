@@ -20,10 +20,10 @@
       "year": "2020",
       "image": "assets/images/macbook.svg",
       "configure": {
-        "chip": "M1",
-        "SSD": "256 GB",
-        "memory": "16 GB",
-        "display": "Retina"
+        "chip": "",
+        "SSD": "",
+        "memory": "",
+        "display": ""
       }
     },
     {
@@ -40,7 +40,8 @@
       }
     },
     {
-      "title": "gh",
+      "id": 4,
+      "title": "wdadwadad",
       "price": "",
       "year": "",
       "image": "assets/images/macbook.svg",
@@ -49,73 +50,7 @@
         "SSD": "",
         "memory": "",
         "display": ""
-      },
-      "id": 4
-    },
-    {
-      "title": "",
-      "price": "",
-      "year": "",
-      "image": "assets/images/macbook.svg",
-      "configure": {
-        "chip": "",
-        "SSD": "",
-        "memory": "",
-        "display": ""
-      },
-      "id": 5
-    },
-    {
-      "title": "",
-      "price": "",
-      "year": "",
-      "image": "assets/images/macbook.svg",
-      "configure": {
-        "chip": "",
-        "SSD": "",
-        "memory": "",
-        "display": ""
-      },
-      "id": 6
-    },
-    {
-      "title": "",
-      "price": "",
-      "year": "",
-      "image": "assets/images/macbook.svg",
-      "configure": {
-        "chip": "",
-        "SSD": "",
-        "memory": "",
-        "display": ""
-      },
-      "id": 7
-    },
-    {
-      "title": "",
-      "price": "",
-      "year": "",
-      "image": "assets/images/macbook.svg",
-      "configure": {
-        "chip": "",
-        "SSD": "",
-        "memory": "",
-        "display": ""
-      },
-      "id": 8
-    },
-    {
-      "title": "",
-      "price": "",
-      "year": "",
-      "image": "assets/images/macbook.svg",
-      "configure": {
-        "chip": "",
-        "SSD": "",
-        "memory": "",
-        "display": ""
-      },
-      "id": 9
+      }
     }
   ]
 }
