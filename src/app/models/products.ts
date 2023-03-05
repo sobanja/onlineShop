@@ -4,7 +4,8 @@ export interface IProducts {
   price: number,
   year: string,
   image?: string,
-  configure: IProductsConfig ;
+  configure: IProductsConfig,
+  quantity: number;
 }
 
 export interface IProductsConfig {

@@ -15,7 +15,7 @@
       <p>Year: {{product.year}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button class="button" mat-flat-button color="primary">Add to cart</button>
+      <button class="button" mat-flat-button color="primary" (click)="addToBasket(product)" type="button" >Add to basket</button>
       <button class="button" mat-flat-button color="primary" [routerLink]="['/product', product.id]">Detail</button>
       <button class="button" mat-flat-button color="primary" mat-button [matMenuTriggerFor]="menu">Edit</button>
       <mat-menu #menu="matMenu">
