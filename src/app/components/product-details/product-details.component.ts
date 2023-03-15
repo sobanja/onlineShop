@@ -8,6 +8,9 @@ import { IProducts } from 'src/app/models/products';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
+
+// implement all methods and fields from oninit interface
+// to make this class more strictly
 export class ProductDetailsComponent implements OnInit {
 
   product: IProducts;

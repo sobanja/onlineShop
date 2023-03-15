@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -7,13 +7,21 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.scss'],
 })
-export class DialogBoxComponent implements OnInit {
+
+export class DialogBoxComponent {
   constructor(
+    // inject(внедрять) matdialogref from DI
+    // инжектим сервис для дальнейшей работы с текущ открытым диалогом 
     public dialogRef: MatDialogRef<DialogBoxComponent>,
+    // search of dependency by token 
+    // через декоратор inject по токену MDD мы вытаскиваем данные из DI 
+    // и заносим их в свойство data чтобы использовать в контексте класса 
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     if (this.data) this.isNew = false;
   }
+  // create form 
+  // formcontrol need for primitive types. here we initialize them for after work
   myForm: FormGroup = new FormGroup({
     id: new FormControl(this.data?.id ?? null),
     title: new FormControl(this.data?.title ?? ''),
@@ -46,8 +54,7 @@ export class DialogBoxComponent implements OnInit {
       },
     };
     // console.log(this.myForm);
+    // after created obj with values we close dialog window and send data 
     this.dialogRef.close(this.data);
   }
-
-  ngOnInit(): void {}
 }

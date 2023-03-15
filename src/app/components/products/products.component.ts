@@ -40,7 +40,8 @@ export class ProductsComponent implements OnInit {
   addToBasket (product: IProducts) {
     product.quantity = 1;
     let findItem;
-
+    // check the id of the incoming product with the id of an already existing product in the basket
+    // to increase its count by 1
     if (this.basket.length > 0) {
       findItem = this.basket.find(item => item.id === product.id);
       if (findItem) this.updateToBasket(findItem)
@@ -49,17 +50,21 @@ export class ProductsComponent implements OnInit {
     } else this.postToBasket(product);
   }
 
+   // subscribed to add data to add product in "database"
   postToBasket(product: IProducts) {
     this.ProductsService.postProductToBasket(product).subscribe((data) => 
     this.basket.push(data)
     );
   }
 
+  // subscribe to method in PS 
+   // update product by link of basket and with product id 
   updateToBasket(product: IProducts) {
     product.quantity += 1;
     this.ProductsService.updateProductToBasket(product).subscribe((data) => {})
   }
 
+     // then product was deleted from "database" we find id in the arr of prod and delete 
   deleteItem(id: number) {
     this.ProductsService.deleteProduct(id).subscribe(() =>
       this.products.find((item) => {
@@ -79,6 +84,7 @@ export class ProductsComponent implements OnInit {
 
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
     //перед закрытием данные перехватятся (подписка на обновление) и передадутся в функцию
+    // либо обновляем уже существующ, либо жобавляем новые продукты
     dialogRef.afterClosed().subscribe((data) => {
       if (data) {
         if (data && data.id)
@@ -95,6 +101,7 @@ export class ProductsComponent implements OnInit {
     );
   }
 
+    // after updated product replace previous product change to a new
   updateData(product: IProducts) { 
     this.ProductsService.updateProduct(product).subscribe((data) => {
       this.products = this.products.map((product) => {
@@ -103,7 +110,7 @@ export class ProductsComponent implements OnInit {
       })
     });
   }
-
+  
   ngOnDestroy() {
     if (this.productsSubscription) this.productsSubscription.unsubscribe();
     if (this.basketSubscription) this.basketSubscription.unsubscribe();

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { BaseComponent } from './components/base/base.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: "**", redirectTo: "", component: BaseComponent}
 ];
 
+// declarate paths for application
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

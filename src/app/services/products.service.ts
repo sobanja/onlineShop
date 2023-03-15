@@ -40,6 +40,7 @@ export class ProductsService {
     return this.http.get<IProducts[]>(this.urlBasket);
   }
 
+    // update product by link of basket and with product id 
   updateProductToBasket(product: IProducts) {
     return this.http.put<IProducts>(`${this.urlBasket}/${product.id}`, product); 
   }

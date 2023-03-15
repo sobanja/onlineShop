@@ -1,6 +1,9 @@
+<!-- formgroup its directive in which we send our form in variable myForm -->
+ <!-- subscribe on submit of form and run some logic -->
 <form [formGroup]="myForm" (ngSubmit)="onSumbit()" class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Title</mat-label>
+    <!-- sync formcontrol with input -->
     <input matInput formControlName="title">
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
@@ -31,7 +34,4 @@
   <button class="button" mat-flat-button style="margin-right: 8px" color="primary" type="submit">
     {{isNew ? 'Add product' : 'Update'}}</button>
   <button class="button" mat-flat-button color="primary" (click)="onNoClick()" type="button">Cancel</button>
-
-
-
 </form>
