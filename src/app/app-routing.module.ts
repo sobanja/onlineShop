@@ -10,6 +10,7 @@ import { ProductResolver } from './services/product.resolver';
 const routes: Routes = [
   {path: '', component: BaseComponent},
   {path: 'products', component: ProductsComponent},
+  // product resolver running before component wiil be init
   {path: 'product/:id', component: ProductDetailsComponent, resolve: {data:ProductResolver}},
   {path: 'basket', component: BasketComponent},
 
@@ -17,8 +18,10 @@ const routes: Routes = [
 ];
 
 // declarate paths for application
+// for main module we should register routs with forRoot method 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+// for importing by main module
 export class AppRoutingModule { }

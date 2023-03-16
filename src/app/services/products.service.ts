@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { IProducts } from '../models/products';
 
 @Injectable({
+  // provided in root for the create only one instance for app
   providedIn: 'root'
 })
 export class ProductsService {

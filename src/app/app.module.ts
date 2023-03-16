@@ -55,6 +55,11 @@ import { HeaderComponent } from './components/UI/header/header.component';
     MatInputModule,
     MatMenuModule
   ],
+  // property providers need for providing some tokens and services 
+  // to use them in the context of this module
+  providers: [],
+  // for exports modules, components, directives, tokens, services
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
