@@ -12,8 +12,8 @@ import { IProducts } from '../models/products';
 export class ProductsService {
 
   // put link to properties for after work with them 
-  url: string = 'http://localhost:3000/products';
-  urlBasket: string = 'http://localhost:3000/basket';
+  url: string = 'https://fine-erin-vulture-boot.cyclic.app/products';
+  urlBasket: string = 'https://fine-erin-vulture-boot.cyclic.app/basket';
 
   constructor(private http: HttpClient) { }
 
