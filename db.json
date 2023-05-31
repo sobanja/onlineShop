@@ -12,7 +12,7 @@
         "memory": "8 GB",
         "display": "Retina"
       },
-      "quantity": 1
+      "quantity": 2
     },
     {
       "id": 2,
@@ -68,5 +68,20 @@
       }
     }
   ],
-  "basket": []
+  "basket": [
+    {
+      "id": 1,
+      "title": "MacBook Air",
+      "price": 900,
+      "year": "2021",
+      "image": "assets/images/macbook.svg",
+      "configure": {
+        "chip": "M1",
+        "SSD": "256 GB",
+        "memory": "8 GB",
+        "display": "Retina"
+      },
+      "quantity": 1
+    }
+  ]
 }

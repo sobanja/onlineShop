@@ -11,8 +11,11 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
+  
   constructor(
+    // for making request to the database
     private ProductsService: ProductsService,
+    // get MatDialog from DI for work with mat dialogs
     public dialog: MatDialog
   ) {}
   products: IProducts[];
